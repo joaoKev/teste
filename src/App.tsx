@@ -22,34 +22,38 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <h1 className="title">Você vai dar o tobs?</h1>
-      <Button className="button" type="primary" onClick={handleButtonClick}>
-        Sim
-      </Button>
-      <Button
-        className="escape-button"
-        style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-        onMouseEnter={handleMouseOver}
-      >
-        Não
-      </Button>
-
-      <Modal
-        title="Obrigado!"
-        open={isModalOpen}
-        onOk={closeModal}
-        onCancel={closeModal}
-        centered
-        footer={[
-          <Button key="submit" type="primary" onClick={closeModal}>
-            Fechar
-          </Button>,
-        ]}
-      >
-        <p>Muito obrigado pela preferência</p>
-      </Modal>
+    <>
+    <div>
+      <h1>Você vai dar o tobs?</h1>
     </div>
+    <div>
+    <Button className="button" type="primary" onClick={handleButtonClick}>
+      Sim
+    </Button>
+    <Button
+      className="escape-button"
+      style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+      onMouseEnter={handleMouseOver}
+    >
+      Não
+    </Button>
+
+    <Modal
+      title="Obrigado!"
+      open={isModalOpen}
+      onOk={closeModal}
+      onCancel={closeModal}
+      centered
+      footer={[
+        <Button key="submit" type="primary" onClick={closeModal}>
+          Fechar
+        </Button>,
+      ]}
+    >
+      <p>Muito obrigado pela preferência</p>
+    </Modal>
+    </div>
+    </>
   );
 }
 
